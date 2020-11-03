@@ -103,6 +103,8 @@ world.addEventListener('click', event => {
   };
 
   if (mousePos.x > arcade_cabinet1_x && mousePos.x < arcade_cabinet1.width + arcade_cabinet1_x && mousePos.y > arcade_cabinet1_y && mousePos.y < arcade_cabinet1.height + arcade_cabinet1_y) {
-    alert("lol");
+    $("#main").slideUp();
+
+    $("#games").slideDown();
   };
 });

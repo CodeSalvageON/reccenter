@@ -11,6 +11,7 @@ $("#new-member-page4").hide();
 $("#new-member-page5").hide();
 
 $("#main").hide();
+$("#games").hide();
 
 // Handle button clicks
 $("#new-member-button").click(function () {
@@ -28,6 +29,10 @@ function hideAll () {
   $("#new-member-page5").hide();
 
   $("#main").hide();
+  $("#games").hide();
+  $("#galaxy-sprint").hide();
+  $("#wizard-pinball").hide();
+  $("#dig-site").hide();
 }
 
 function returnToMainScreen () {
