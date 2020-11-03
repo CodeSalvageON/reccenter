@@ -1,0 +1,51 @@
+/* Stylesheet */
+
+/* Natural Tags */
+body {
+  background-color: powderblue;
+  font-family: 'Syne Mono', monospace;
+}
+
+img {
+  border-radius: 8px;
+}
+
+canvas {
+  border-radius: 8px;
+  background-size: cover;
+  background-color: antiquewhite;
+}
+
+button {
+  padding: 15px;
+  border: hidden;
+  border-radius: 8px;
+  background-color: antiquewhite;
+  font-family: 'Syne Mono', monospace;
+  transition: background-color 2s ease-in-out;
+}
+
+button:hover {
+  background-color: greenyellow;
+  transition: background-color 2s ease-in-out;
+}
+
+/* Classes */
+.center {
+  margin: auto;
+  text-align: center;
+}
+
+.paragraph {
+  width: 550px;
+}
+
+.zoom {
+  margin: 0 auto;
+  transition: transform .5s; 
+}
+
+.zoom:hover {
+  cursor: default;
+  transform: scale(1.05);
+}
