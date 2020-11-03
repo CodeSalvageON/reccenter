@@ -28,3 +28,8 @@ $("#rec-storyline-4").click(function () {
 
   $("#main").slideDown();
 });
+
+
+$("#galaxy-sprint-button").click(function () {
+  document.getElementById("galaxy-sprint").innerHTML = '';
+});
