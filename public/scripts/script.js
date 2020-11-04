@@ -38,5 +38,11 @@ function hideAll () {
 function returnToMainScreen () {
   hideAll();
 
-  $("#first-page").show();
+  $("#first-page").slideDown();
+}
+
+function returnToMainRoom () {
+  hideAll();
+
+  $("#main").slideDown();
 }

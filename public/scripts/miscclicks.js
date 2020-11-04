@@ -27,9 +27,18 @@ $("#rec-storyline-4").click(function () {
   $("#new-member-page5").slideUp();
 
   $("#main").slideDown();
+  screen = 2;
 });
 
 
 $("#galaxy-sprint-button").click(function () {
-  document.getElementById("galaxy-sprint").innerHTML = '';
+  window.open("https://cdn.i-ready.com/instruction/reward-games/master/49/game-lanerunner/");
+});
+
+$("#wizard-pinball-button").click(function () {
+  window.open("https://cdn.i-ready.com/instruction/reward-games/master/49/game-bubbles/");
+});
+
+$("#dig-site-button").click(function () {
+  window.open("https://cdn.i-ready.com/instruction/reward-games/master/49/game-minedigger/");
 });

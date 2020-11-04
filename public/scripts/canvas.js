@@ -12,14 +12,33 @@ var offsetY = worldOffset.top;
 
 var arcade_cabinet1_tolerance = 5;
 
+function simulateKeyPress(character) {
+  jQuery.event.trigger({ type : 'keypress', which : character.charCodeAt(0) });
+}
+
 var x = world.width;
 var y = world.height;
 
 var arcade_cabinet1_x = 200;
 var arcade_cabinet1_y = 165;
 
+var door_frame_1_x = 700;
+var door_frame_1_y = 165;
+
+var reception_desk_x = 1000;
+var reception_desk_y = 285;
+
 console.log(x);
 console.log(y);
+
+var floor = new Image();
+floor.onload = function () {
+  world_render.drawImage(floor, 0, 520);
+
+  console.log(floor.width);
+  console.log(floor.height);
+}
+floor.src = "https://images-ext-2.discordapp.net/external/G31R1VK2EDKX1lBtK0kdfUDRQSTOesNOPaGooWnbpc8/https/www.cogic.org/wp-content/uploads/2015/03/brown-bar.png?width=1025&height=86";
 
 var arcade_cabinet1 = new Image();
 arcade_cabinet1.onload = function () {
@@ -30,6 +49,26 @@ arcade_cabinet1.onload = function () {
 }
 arcade_cabinet1.src = "https://media.discordapp.net/attachments/772064957793435678/772634119212892190/game-machine.png?width=405&height=447";
 
+var door_frame_1 = new Image();
+door_frame_1.onload = function () {
+  world_render.drawImage(door_frame_1, 700, 165);
+
+  console.log(door_frame_1.width);
+  console.log(door_frame_1.height);
+}
+door_frame_1.src = "https://media.discordapp.net/attachments/772064957793435678/773521938039046174/dfeec75e1338bf8ee459c222e34455c5.png";
+
+var reception_desk = new Image();
+reception_desk.onload = function () {
+  world_render.drawImage(reception_desk, 1000, 285);
+
+  console.log(reception_desk.width);
+  console.log(reception_desk.height);
+}
+reception_desk.src = "https://media.discordapp.net/attachments/772064957793435678/773529342902272040/unknown-removebg-preview.png";
+
+simulateKeyPress("d");
+
 // Control Commands
 function goLeft () {
   console.log("RIGHT");
@@ -38,13 +77,33 @@ function goLeft () {
   world_render.clearRect(0, 0, world.width, world.height);
 
   arcade_cabinet1_x = arcade_cabinet1_x - 5.5;
+  door_frame_1_x = door_frame_1_x - 5.5;
+  reception_desk_x = reception_desk_x - 5.5;
+
+  world_render.drawImage(floor, 0, 520);
 
   world_render.drawImage(arcade_cabinet1, arcade_cabinet1_x, arcade_cabinet1_y);
 
-  if (arcade_cabinet1_x < -900) {
-    console.log(arcade_cabinet1_x);
+  world_render.drawImage(door_frame_1, door_frame_1_x, door_frame_1_y);
 
-    arcade_cabinet1_x = 900;
+  world_render.drawImage(reception_desk, reception_desk_x, reception_desk_y);
+
+  if (arcade_cabinet1_x < -900) {
+    console.log("arcade_cabinet1_x: " + arcade_cabinet1_x);
+
+    arcade_cabinet1_x = 800;
+  }
+
+  if (door_frame_1_x < -900) {
+    console.log("door_frame_1_x: " + door_frame_1_x);
+
+    door_frame_1_x = 800;
+  }
+
+  if (reception_desk_x < -900) {
+    console.log("reception_desk_x: " + reception_desk_x);
+
+    reception_desk_x = 800;
   }
 }
 
@@ -55,24 +114,46 @@ function goRight () {
   world_render.clearRect(0, 0, world.width, world.height);
 
   arcade_cabinet1_x = arcade_cabinet1_x + 5.5;
+  door_frame_1_x = door_frame_1_x + 5.5;
+  reception_desk_x = reception_desk_x + 5.5;
+
+  world_render.drawImage(floor, 0, 520);
 
   world_render.drawImage(arcade_cabinet1, arcade_cabinet1_x, arcade_cabinet1_y);
 
-  if (arcade_cabinet1_x > 900) {
-    console.log(arcade_cabinet1_x);
+  world_render.drawImage(door_frame_1, door_frame_1_x, door_frame_1_y);
 
-    arcade_cabinet1_x = -900;
+  world_render.drawImage(reception_desk, reception_desk_x, reception_desk_y);
+
+  if (arcade_cabinet1_x > 900) {
+    console.log("arcade_cabinet1_x: " + arcade_cabinet1_x);
+
+    arcade_cabinet1_x = -800;
+  }
+
+  if (door_frame_1_x > 900) {
+    console.log("door_frame_1_x: " + door_frame_1_x);
+
+    door_frame_1_x = -800;
+  }
+
+  if (reception_desk_x > 900) {
+    console.log("reception_desk_x: " + reception_desk_x);
+
+    reception_desk_x = -800
   }
 }
 
 // Detect Keypresses
 $(this).keypress(function (event) {
-  if (event.keyCode === 100) {
-    goLeft();
-  }
+  if (screen === 2) {
+    if (event.keyCode === 100) {
+      goLeft();
+    }
 
-  else if (event.keyCode === 97) {
-    goRight();
+    else if (event.keyCode === 97) {
+      goRight();
+    }
   }
 });
 
@@ -106,5 +187,6 @@ world.addEventListener('click', event => {
     $("#main").slideUp();
 
     $("#games").slideDown();
+    screen = 3;
   };
 });
