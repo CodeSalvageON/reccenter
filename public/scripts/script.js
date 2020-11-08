@@ -12,6 +12,9 @@ $("#new-member-page5").hide();
 
 $("#main").hide();
 $("#games").hide();
+$("#plory").hide();
+$("#door-1").hide();
+$("#pool").hide();
 
 // Handle button clicks
 $("#new-member-button").click(function () {
@@ -33,6 +36,9 @@ function hideAll () {
   $("#galaxy-sprint").hide();
   $("#wizard-pinball").hide();
   $("#dig-site").hide();
+  $("#plory").hide();
+  $("#door-1").hide();
+  $("#pool").hide();
 }
 
 function returnToMainScreen () {

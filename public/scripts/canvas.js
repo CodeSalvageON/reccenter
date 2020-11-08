@@ -189,4 +189,18 @@ world.addEventListener('click', event => {
     $("#games").slideDown();
     screen = 3;
   };
+
+  if (mousePos.x > reception_desk_x && mousePos.x < reception_desk.width + reception_desk_x && mousePos.y > reception_desk_y && mousePos.y < reception_desk.height + reception_desk_y) {
+    $("#main").slideUp();
+
+    $("#plory").slideDown();
+    screen = 3;
+  }
+
+  if (mousePos.x > door_frame_1_x && mousePos.x < door_frame_1.width + door_frame_1_x && mousePos.y > door_frame_1_y && mousePos.y < door_frame_1.height + door_frame_1_y) {
+    $("#main").slideUp();
+
+    $("#door-1").slideDown();
+    screen = 4;
+  }
 });

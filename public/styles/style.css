@@ -49,3 +49,10 @@ button:hover {
   cursor: default;
   transform: scale(1.05);
 }
+
+/* Ids */
+#plory {
+  width: 600px;
+  border-radius: 8px;
+  background-color: antiquewhite;
+}

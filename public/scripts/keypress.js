@@ -16,6 +16,14 @@ $(this).keypress(function (event) {
     }
   }
 
+  else if (screen === 4) {
+    if (event.keyCode === 109) {
+      returnToMainRoom();
+
+      screen = 2;
+    }
+  }
+
   else {
     return false;
   }
