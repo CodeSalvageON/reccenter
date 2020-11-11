@@ -137,11 +137,11 @@ function hallWayRight () {
 $(this).keypress(function (event) {
   if (screen === 4) {
     if (event.keyCode === 100) {
-      hallWayLeft();
+      hallWayRight();
     }
 
     else if (event.keyCode === 97) {
-      hallWayRight();
+      hallWayLeft();
     }
   }
 });

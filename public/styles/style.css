@@ -50,9 +50,41 @@ button:hover {
   transform: scale(1.05);
 }
 
+.error {
+  color: red;
+}
+
+.text-input {
+  padding: 15px;
+  border: hidden;
+  border-radius: 8px;
+  font-family: 'Syne Mono', monospace;
+}
+
 /* Ids */
 #plory {
   width: 600px;
   border-radius: 8px;
   background-color: antiquewhite;
+}
+
+#pool-div {
+  width: 795px;
+  height: 447px;
+  border-radius: 8px;
+  background-size: cover;
+  background-image: url("https://media.discordapp.net/attachments/759173234565316618/774819241000960015/636445232871070000.png?width=1194&height=671");
+}
+
+#chat-input {
+  bottom: 0px;
+  position: fixed;
+}
+
+#text-pool {
+  width: 500px;
+}
+
+#refresh-pool {
+  width: 589px;
 }

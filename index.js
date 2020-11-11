@@ -55,6 +55,12 @@ app.get("/", function (req, res) {
   res.sendFile(index);
 });
 
+app.post("/push_message", function (req, res) {
+  
+});
+
 http.listen(port, function(){
   console.log('listening on *:' + port);
+
+  console.log(pool.message);
 });

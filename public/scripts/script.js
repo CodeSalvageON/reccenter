@@ -52,3 +52,9 @@ function returnToMainRoom () {
 
   $("#main").slideDown();
 }
+
+function returnToFirstFloorHallway () {
+  hideAll();
+
+  $("#door-1").slideDown();
+}

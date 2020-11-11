@@ -1,4 +1,5 @@
 // Script for handling clicks outside of buttons.
+
 $("#rec-outside-1").click(function () {
   $("#new-member-page1").hide();
 

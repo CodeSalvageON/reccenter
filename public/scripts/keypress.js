@@ -1,4 +1,5 @@
 // Detect Keypresses and execute functions from other scripts, namely script.js
+
 $(this).keypress(function (event) {
   if (screen === 1) {
     console.log(event.keyCode);
@@ -21,6 +22,14 @@ $(this).keypress(function (event) {
       returnToMainRoom();
 
       screen = 2;
+    }
+  }
+
+  else if (screen === 5) {
+    if (event.keyCode === 109) {
+      returnToFirstFloorHallway();
+
+      screen = 4;
     }
   }
 
