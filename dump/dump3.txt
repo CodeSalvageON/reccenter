@@ -1,0 +1,1 @@
+doc.data().log + "<br/><div class='message'><h3>" + sanitizer.escape(message) + "</h3></div>"

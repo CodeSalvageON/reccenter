@@ -1,0 +1,15 @@
+/* CSS for the Pool */
+
+body {
+  background-color: transparent;
+  font-family: 'Syne Mono', monospace;
+}
+
+/* Classes */
+
+.message {
+  opacity: .8;
+  width: 500px;
+  border-radius: 8px;
+  background-color: azure;
+}

@@ -1,0 +1,1 @@
+"<link href='https://reccenter.codesalvageon.repl.co/styles/pool/pool.css' rel='stylesheet'><script src='https://reccenter.codesalvageon.repl.co/scripts/pool/autoscroll.js'></script>"

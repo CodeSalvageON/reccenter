@@ -1,0 +1,1 @@
+This folder is for putting in resources from the original i-ready website, specifically css.
