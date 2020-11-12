@@ -50,3 +50,16 @@ $("#stair-link").click(function () {
   screen = 6;
   $("#second-floor-hallway").slideDown();
 });
+
+
+$("#mumkey").click(function () {
+  window.open("https://youtu.be/Bi4MNieh9Hw");
+});
+
+$("#greg").click(function () {
+  window.open("https://youtu.be/xnEpbBG01Cg");
+});
+
+$("#pvp").click(function () {
+  window.open("https://youtu.be/4UTnKJa7dP0");
+});

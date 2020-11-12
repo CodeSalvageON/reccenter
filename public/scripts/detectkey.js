@@ -41,6 +41,14 @@ $(this).keypress(function (event) {
     }
   }
 
+  else if (screen === 7) {
+    if (event.keyCode === 109) {
+      returnToSecondFloorHallway();
+
+      screen = 6;
+    }
+  }
+
   else {
     return false;
   }

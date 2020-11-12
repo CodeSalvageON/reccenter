@@ -88,3 +88,11 @@ button:hover {
 #refresh-pool {
   width: 589px;
 }
+
+#bathroom-div {
+  width: 795px;
+  height: 447px;
+  border-radius: 8px;
+  background-size: cover;
+  background-image: url("https://media.discordapp.net/attachments/759173234565316618/776506783308054539/Arcremodel-atd-031519-1-6.png");
+}

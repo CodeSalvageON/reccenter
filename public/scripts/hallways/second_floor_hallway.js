@@ -19,7 +19,7 @@ var portal_y = 0;
 var bathroom_door_x = 70;
 var bathroom_door_y = 200;
 
-var radio_x = 900;
+var radio_x = 250;
 var radio_y = 420;
 
 var tv_x = 1000;
@@ -162,5 +162,63 @@ $(this).keypress(function (event) {
     else if (event.keyCode === 97) {
       secondHallwayLeft();
     }
+  }
+});
+
+// Detect Mouseclicks
+second_floor_hallway.addEventListener('click', event => {
+  var mouseX, mouseY;
+
+  if(event.offsetX) {
+    mouseX = event.offsetX;
+    mouseY = event.offsetY;
+  }
+  
+  else if(event.layerX) {
+    mouseX = event.layerX;
+    mouseY = event.layerY;
+  }
+
+  console.log(mouseX);
+  console.log(mouseY);
+
+  const mousePos = {
+    x: event.clientX - second_floor_hallway.offsetLeft,
+    y: event.clientY - second_floor_hallway.offsetTop
+  };
+
+  if (mousePos.x > bathroom_door_x && mousePos.x < bathroom_door.width + bathroom_door_x && mousePos.y > bathroom_door_y && mousePos.y < bathroom_door.height + bathroom_door_y) {
+    console.log("Clicked on the bathroom door");
+    $("#second-floor-hallway").slideUp();
+
+    screen = 7;
+    
+    $("#bathroom").slideDown();
+  };
+
+  if (mousePos.x > portal_x && mousePos.x < portal.width + portal_x && mousePos.y > portal_y && mousePos.y < portal.height + portal_y) {
+    console.log("Clicked on the portal.");
+
+    window.open("https://discord.gg/vKzmK72AdN");
+  }
+
+  if (mousePos.x > radio_x && mousePos.x < radio.width + radio_x && mousePos.y > radio_y && mousePos.y < radio.height + radio_y) {
+    console.log("Clicked on the jukebox.");
+
+    $("#second-floor-hallway").slideUp();
+
+    screen = 7;
+
+    $("#jukebox").slideDown();
+  }
+
+  if (mousePos.x > tv_x && mousePos.x < tv.width + tv_x && mousePos.y > tv_y && mousePos.y < tv.height + tv_y) {
+    console.log("Clicked on the TV.");
+
+    $("#second-floor-hallway").slideUp();
+
+    screen = 7;
+
+    $("#tv").slideDown();
   }
 });

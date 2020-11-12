@@ -18,12 +18,23 @@ $("#pool").hide();
 $("#stairwell").hide();
 $("#jail-cell").hide();
 $("#second-floor-hallway").hide();
+$("#bathroom").hide();
+$("#jukebox").hide();
+$("#tv").hide();
 
 // Handle button clicks
 $("#new-member-button").click(function () {
   $("#first-page").hide();
 
   $("#new-member-page1").show();
+});
+
+$("#returning-member-button").click(function () {
+  $("#first-page").hide();
+
+  screen = 2;
+
+  $("#main").slideDown();
 });
 
 // Functions for other scripts 
@@ -45,6 +56,9 @@ function hideAll () {
   $("#stairwell").hide();
   $("#jail-cell").hide();
   $("#second-floor-hallway").hide();
+  $("#bathroom").hide();
+  $("#jukebox").hide();
+  $("#tv").hide();
 }
 
 function returnToMainScreen () {
@@ -69,4 +83,10 @@ function returnToStairWell () {
   hideAll();
 
   $("#stairwell").slideDown();
+}
+
+function returnToSecondFloorHallway () {
+  hideAll();
+
+  $("#second-floor-hallway").slideDown();
 }

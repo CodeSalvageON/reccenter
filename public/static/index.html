@@ -25,7 +25,7 @@
       <br/>
       <button id="new-member-button">New Member</button>
       <br/>
-      <button>Returning Member</button>
+      <button id="returning-member-button">Returning Member</button>
       <br/>
       <br/>
       <i>For any comments, questions, or concerns:</i>
@@ -134,7 +134,7 @@
       <b class="error">Online interactions are not moderated. Swim at your own risk!</b>
       <br/>
       <div id="pool-div" class="center"> 
-        <iframe src="https://reccenter.codesalvageon.repl.co/static/extra/pool.html" frameBorder="0" width="795" height="447"></iframe>
+        <iframe src="https://reccenter.codesalvageon.repl.co/static/extra/pool.html" frameBorder="0" width="795" height="447" id="pool-iframe"></iframe>
       </div>
       <br/>
       <i>Press M to go back to the first floor hallway.</i>
@@ -165,6 +165,36 @@
       <br/>
       <i>Press M to go back to the stairwell.</i>
     </div>
+    <div class="center" id="bathroom">
+      <b><h1>The Bathroom</h1></b>
+      <b class="error">Online interactions are not moderated. Shit at your own risk!</b>
+      <br/>
+      <div id="bathroom-div" class="center">
+        <iframe src="https://reccenter.codesalvageon.repl.co/static/extra/bathroom.html" frameBorder="0" width="795" height="447" id="bathroom-iframe"></iframe>
+      </div>
+      <br/>
+      <i>Press M to go back to the second floor hallway.</i>
+    </div>
+    <div class="center" id="jukebox">
+      <b><h1>The Jukebox</h1></b>
+      <i>i-Ready's official music playlist!</i>
+      <br/>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?controls=0&amp;list=PL1KJ0I7lUj0SpcpwLLVdaqzQCvfOoBfA6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <br/>
+      <i>Press M to go back to the second floor hallway.</i>
+    </div>
+    <div class="center" id="tv">
+      <b><h1>The TV</h1></b>
+      <i>Let's watch some educational school films!</i>
+      <br/>
+      <img src="https://media.discordapp.net/attachments/772064957793435678/776529036578783282/MV5BOGYwOTJmNzUtZGQwNC00OTk5LThlYTktOTZiOWY0NWQ3ZDQyXkEyXkFqcGdeQXVyODQwODAwMTE.png?width=529&height=671" width="132.25" height="167.75" class="zoom" id="mumkey"/>
+      <br/>
+      <img src="https://media.discordapp.net/attachments/772064957793435678/776530942834769931/iu.png?width=1194&height=671" width="298.5" height="167.75" class="zoom" id="greg"/>
+      <br/>
+      <img src="https://media.discordapp.net/attachments/772064957793435678/776531956850229279/hqdefault.png" width="278.5" height="167.75" class="zoom" id="pvp"/>
+      <br/>
+      <i>Press M to go back to the second floor hallway.</i>
+    </div>
     
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -175,5 +205,6 @@
     <script src="https://unpkg.com/konva@7.1.4/konva.min.js"></script>
     <script src="https://reccenter.codesalvageon.repl.co/scripts/hallways/first_floor_hallway.js"></script>
     <script src="https://reccenter.codesalvageon.repl.co/scripts/hallways/second_floor_hallway.js"></script>
+    <script src="https://reccenter.codesalvageon.repl.co/scripts/debug/scrollerdebug.js"></script>
   </body>
 </html>

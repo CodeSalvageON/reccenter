@@ -61,7 +61,7 @@ app.post("/push_message", async function (req, res) {
   }
 
   await poolRef.set({
-    log : doc.data().log + "<br/><div class='message'><h3>" + sanitizer.escape(message) + "</h3></div>"
+    log : doc.data().log + "<br/><div class='message'><h3>" + sanitizer.escape(message) + "</h3></div><script src='https://reccenter.codesalvageon.repl.co/scripts/pool/scroller.js'></script>"
   });
 });
 
@@ -74,20 +74,64 @@ app.get("/get_messages", async function (req, res) {
   res.send(messages);
 });
 
+app.post("/push_shit", async function (req, res) {
+  const message = req.body.message;
+
+  const bathroomRef = db.collection('bathroom').doc('chatlog');
+  const doc = await bathroomRef.get();
+
+  console.log(doc.data().log);
+
+  if (!doc.exists) {
+    console.log("Error: Document not found");
+  }
+
+  else {
+    console.log(doc.data());
+  }
+
+  await bathroomRef.set({
+    log : doc.data().log + "<br/><div class='message'><h3>" + sanitizer.escape(message) + "</h3></div><script src='https://reccenter.codesalvageon.repl.co/scripts/pool/scroller.js'></script>"
+  });
+});
+
+app.get("/get_shit", async function (req, res) {
+  const bathroomRef = db.collection('bathroom').doc('chatlog');
+  const doc = await bathroomRef.get(); 
+
+  const messages = doc.data().log;
+
+  res.send(messages);
+});
+
 http.listen(port, function(){
   console.log('listening on *:' + port);
 
   const poolRef = db.collection('pool').doc('chatlog');
+  const bathroomRef = db.collection('bathroom').doc('chatlog');
   
   async function fixPool () {
     const doc = await poolRef.get();
+    const shit = await bathroomRef.get();
 
     if (!doc.exists) {
       const fix_data = {
-        log : "<link href='https://reccenter.codesalvageon.repl.co/styles/pool/pool.css' rel='stylesheet'><script src='https://reccenter.codesalvageon.repl.co/scripts/pool/scroller.js'></script>"
+        log : "<link href='https://reccenter.codesalvageon.repl.co/styles/pool/pool.css' rel='stylesheet'><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script src='https://reccenter.codesalvageon.repl.co/scripts/pool/scroller.js'></script>"
       }
 
       await poolRef.set(fix_data);
+    }
+
+    else {
+      console.log("No fix needed.");
+    }
+
+    if (!shit.exists) {
+      const fix_data = {
+        log : "<link href='https://reccenter.codesalvageon.repl.co/styles/pool/pool.css' rel='stylesheet'><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script src='https://reccenter.codesalvageon.repl.co/scripts/pool/scroller.js'></script>"
+      }
+
+      await bathroomRef.set(fix_data);
     }
 
     else {
