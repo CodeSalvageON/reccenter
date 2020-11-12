@@ -43,3 +43,10 @@ $("#wizard-pinball-button").click(function () {
 $("#dig-site-button").click(function () {
   window.open("https://cdn.i-ready.com/instruction/reward-games/master/49/game-minedigger/");
 });
+
+$("#stair-link").click(function () {
+  $("#stairwell").slideUp();
+
+  screen = 6;
+  $("#second-floor-hallway").slideDown();
+});

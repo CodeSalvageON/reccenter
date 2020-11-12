@@ -33,6 +33,14 @@ $(this).keypress(function (event) {
     }
   }
 
+  else if (screen === 6) {
+    if (event.keyCode === 109) {
+      returnToStairWell();
+
+      screen = 5;
+    }
+  }
+
   else {
     return false;
   }

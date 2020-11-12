@@ -84,7 +84,7 @@ http.listen(port, function(){
 
     if (!doc.exists) {
       const fix_data = {
-        log : "<link href='https://reccenter.codesalvageon.repl.co/styles/pool/pool.css' rel='stylesheet'><script src='https://reccenter.codesalvageon.repl.co/scripts/pool/autoscroll.js'></script>"
+        log : "<link href='https://reccenter.codesalvageon.repl.co/styles/pool/pool.css' rel='stylesheet'><script src='https://reccenter.codesalvageon.repl.co/scripts/pool/scroller.js'></script>"
       }
 
       await poolRef.set(fix_data);

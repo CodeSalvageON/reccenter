@@ -15,6 +15,9 @@ $("#games").hide();
 $("#plory").hide();
 $("#door-1").hide();
 $("#pool").hide();
+$("#stairwell").hide();
+$("#jail-cell").hide();
+$("#second-floor-hallway").hide();
 
 // Handle button clicks
 $("#new-member-button").click(function () {
@@ -39,6 +42,9 @@ function hideAll () {
   $("#plory").hide();
   $("#door-1").hide();
   $("#pool").hide();
+  $("#stairwell").hide();
+  $("#jail-cell").hide();
+  $("#second-floor-hallway").hide();
 }
 
 function returnToMainScreen () {
@@ -57,4 +63,10 @@ function returnToFirstFloorHallway () {
   hideAll();
 
   $("#door-1").slideDown();
+}
+
+function returnToStairWell () {
+  hideAll();
+
+  $("#stairwell").slideDown();
 }

@@ -179,9 +179,19 @@ first_floor_hallway.addEventListener('click', event => {
 
   if (mousePos.x > door_frame_hallway_2_x && mousePos.x < door_frame_hallway_2.width + door_frame_hallway_2_x && mousePos.y > door_frame_hallway_2_y && mousePos.y < door_frame_hallway_2.height + door_frame_hallway_2_y) {
     console.log("Clicked on the second door");
+
+    $("#door-1").slideUp();
+
+    $("#stairwell").slideDown();
+    screen = 5;
   }
 
   if (mousePos.x > door_frame_hallway_3_x && mousePos.x < door_frame_hallway_3.width + door_frame_hallway_3_x && mousePos.y > door_frame_hallway_3_y && mousePos.y < door_frame_hallway_3.height + door_frame_hallway_3_y) {
     console.log("Clicked on the third door");
+
+    $("#door-1").slideUp();
+
+    $("#jail-cell").slideDown();
+    screen = 5;
   }
 });
